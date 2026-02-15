@@ -1,11 +1,11 @@
 const btnElementList = document.querySelectorAll("button");
 
-btnElementList.forEach(function (item) {
-  item.addEventListener("click", showStatus);
+btnElementList.forEach(function (btn) {
+  btn.addEventListener("click", showStatus);
 });
 
 function showStatus(e) {
   console.log("clicked");
-  this.innerText = "clicked";
-  this.removeEventListener("click", showStatus);
+  e.currentTarget.innerText = "clicked";
+  e.currentTarget.removeEventListener("click", showStatus);
 }

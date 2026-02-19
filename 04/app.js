@@ -8,8 +8,12 @@ divElementsList.forEach(function (div) {
 bodyElement.addEventListener("click", removeClass);
 
 function addClass(e) {
-  e.currentTarget.classList.add("clicked");
+  const element = e.currentTarget;
+  setTimeout(function () {
+    element.classList.add("clicked");
+  }, 500);
 }
+
 function removeClass(e) {
   if (e.target === bodyElement) {
     divElementsList.forEach(function (div) {

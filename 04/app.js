@@ -1,8 +1,8 @@
 const divElementsList = document.querySelectorAll("div");
 const bodyElement = document.body;
 
-divElementsList.forEach(function (div) {
-  div.addEventListener("click", addClass);
+divElementsList.forEach(function (element) {
+  element.addEventListener("click", addClass);
 });
 
 bodyElement.addEventListener("click", removeClass);

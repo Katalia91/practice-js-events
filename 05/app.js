@@ -18,16 +18,17 @@ textElementList.forEach(function (item) {
 /* Funkcja, która ma za zadanie zliczać kliknięcia */
 function countClicks(e) {
   e.preventDefault();
+  let section;
+  let key;
   if (e.target.tagName.includes("A")) {
-    let hrefAttr = e.target.getAttribute("href");
-    if (stats.links[hrefAttr] !== undefined) {
-      stats.links[hrefAttr]++;
-    }
+    section = "links";
+    key = e.target.getAttribute("href");
   } else if (e.target.tagName.includes("P")) {
-    let dataAttr = e.target.dataset.id;
-    if (stats.paragraphs[dataAttr] !== undefined) {
-      stats.paragraphs[dataAttr]++;
-    }
+    section = "paragraphs";
+    key = e.target.dataset.id;
+  }
+  if (stats[section][key] !== undefined) {
+    stats[section][key]++;
   }
 }
 

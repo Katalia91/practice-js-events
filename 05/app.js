@@ -15,7 +15,7 @@ textElementList.forEach(function (item) {
   item.addEventListener("click", countClicks);
 });
 
-/* Funkcja, która ma za zadanie zliczać kliknięcia */
+/* Funkcja do zliczania kliknięć */
 function countClicks(e) {
   e.preventDefault();
   let section;

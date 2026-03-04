@@ -8,7 +8,6 @@ const stats = {
 };
 
 /* tutaj umieść swój kod */
-const linkElementList = document.querySelectorAll(".link");
 const textElementList = document.querySelectorAll(".text");
 
 textElementList.forEach(function (item) {
@@ -29,6 +28,8 @@ function countClicks(e) {
   }
   if (stats[section][key] !== undefined) {
     stats[section][key]++;
+  } else {
+    stats[section][key] = 1;
   }
 }
 
